@@ -1,69 +1,69 @@
-# ⚡ Windows Dotfiles & Terminal Setup
+# Windows Dotfiles & Terminal Setup
 
-Персональная конфигурация **Windows Terminal**, **PowerShell 7** и **Command Prompt (CMD)** в визуальном стиле Antigravity Dark с кастомными баннерами Fastfetch и Clink.
-
----
-
-## 🎨 Особенности
-
-* **Windows Terminal:**
-  * **Шрифт:** `Consolas`, размер `11.0 pt`
-  * **Тема:** `Antigravity Dark` (глубокий черный фон `#000000`, акцентные цвета подсветки синтаксиса)
-  * **Курсор:** тонкая палочка (`bar`) бирюзового цвета (`#48A0C7`)
-  * **Отступы:** `16px` со всех сторон
-  * **Поведение скролла:** `snapOnInput: false` (экран не срывается вниз при нажатии Backspace или редактировании)
-  * **Размер окна:** `35` строк по умолчанию
-
-* **PowerShell 7:**
-  * Автозапуск **Fastfetch** с фирменным оранжевым ASCII-логотипом *Blade Runner 2049*
-  * Полный набор системных характеристик (OS, Kernel, Host, Shell, Terminal, Uptime, CPU, GPU, RAM, Disks, Battery, IP/DNS)
-  * UTF-8 по умолчанию
-  * Чистый prompt с правильным интервалом
-
-* **Command Prompt (CMD):**
-  * Интеграция с **Clink** (поддержка Unix-горячих клавиш, автодополнения и правильный пробел после `>`)
-  * Компактный заголовок Fastfetch без логотипа при открытии вкладки (`user@host`, `OS`, `Kernel`, `Host`)
+Personal configuration for **Windows Terminal**, **PowerShell 7**, and **Command Prompt (CMD)** crafted in the Antigravity Dark aesthetic with custom Fastfetch banners and Clink integration.
 
 ---
 
-## 📁 Структура репозитория
+## Features
+
+### Windows Terminal
+* **Font:** `Consolas`, `11.0 pt`, `normal` weight
+* **Color Scheme:** `Antigravity Dark` (pure black `#000000` background with IDE-inspired syntax highlighting palette)
+* **Cursor:** Thin bar (`#48A0C7`)
+* **Padding:** `16px` on all sides
+* **Scroll behavior:** `"snapOnInput": false` (prevents viewport jumping to prompt on Backspace or keypress)
+* **Default window size:** `35` rows
+
+### PowerShell 7
+* Automated **Fastfetch** banner with an orange (*#f78b04*) ASCII *Blade Runner 2049* logo
+* Clean system telemetry (OS, Kernel, Host, Shell, Terminal, Uptime, CPU, GPU, RAM, Disks, Battery, IP/DNS)
+* UTF-8 output encoding by default
+* Seamless prompt spacing
+
+### Command Prompt (CMD)
+* **Clink** integration for Unix-like keybindings, tab completion, and proper prompt spacing
+* Minimalist Fastfetch header on tab launch (`user@host`, `OS`, `Kernel`, `Host`) with cleared screen
+
+---
+
+## Repository Structure
 
 ```text
 dotfiles/
 ├── .config/
 │   └── fastfetch/
-│       ├── ascii.txt      # Логотип Blade Runner 2049 (ASCII art)
-│       ├── config.jsonc   # Основной конфиг для PowerShell
-│       └── cmd.jsonc      # Компактный конфиг для CMD
+│       ├── ascii.txt      # Blade Runner 2049 ASCII art logo
+│       ├── config.jsonc   # Full Fastfetch config for PowerShell
+│       └── cmd.jsonc      # Minimal Fastfetch config for CMD
 ├── powershell/
 │   └── Microsoft.PowerShell_profile.ps1
 ├── terminal/
-│   └── settings.json      # Настройки Windows Terminal & Preview
+│   └── settings.json      # Windows Terminal & Preview settings
 ├── clink/
-│   └── prompt_space.lua   # Скрипт пробела после prompt для Clink
-├── install.ps1            # Скрипт автоматической установки в 1 клик
+│   └── prompt_space.lua   # Prompt formatting filter for Clink
+├── install.ps1            # One-click automated installer
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-## 🚀 Быстрая установка
+## Quick Installation
 
-### 1. Необходимые утилиты (если еще не установлены):
+### 1. Prerequisites (install via WinGet)
 ```powershell
 winget install Fastfetch-cli.Fastfetch
 winget install Microsoft.PowerShell
 winget install chrisant996.clink
 ```
 
-### 2. Клонирование и установка:
+### 2. Clone & Install
 ```powershell
 git clone https://github.com/svyatoslavdcode/dotfiles.git $HOME/dotfiles
-cd $HOME/dotfiles
-.\install.ps1
+powershell -ExecutionPolicy Bypass -File "$HOME\dotfiles\install.ps1"
 ```
 
-Скрипт автоматически скопирует конфигурационные файлы в нужные директории Windows:
+The script automatically distributes configurations to their respective system targets:
 * `$HOME\.config\fastfetch\`
 * `$HOME\Documents\PowerShell\`
 * `%LOCALAPPDATA%\clink\`

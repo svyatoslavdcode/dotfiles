@@ -12,75 +12,38 @@
   },
   "display": {
     "separator": ": ",
-    "color": { // Цвет заголовков (OS, Host и т.д.)
+    "color": {
       "keys": "#f78b04"
     }
   },
   "modules": [
     {
-        "type": "title",
-        "color": {
-            "user": "#f78b04",  // Имя пользователя (стандартный цвет терминала)
-            "at": "default",    // Знак @
-            "host": "#f78b04"   // Имя компьютера
-        }
+      "type": "title",
+      "color": {
+        "user": "#f78b04",
+        "at": "default",
+        "host": "#f78b04"
+      }
     },
     "separator",
-    // // === SOFTWARE ===
-    // "break", // Пустая строка для разделения
-    // {
-    //     "type": "custom", 
-    //     "format": "----------- SOFTWARE -----------", // Текст заголовка
-    //     "key": " ",          // Пустой ключ, чтобы не было надписи слева
-    //     "keyColor": "#f78b04",
-    //     "outputColor":"#f78b04" // Цвет текста (Оранжевый)
-    // },
     "os",
     "kernel",
-     {
-        "type": "host",
-        "format": "{2}"      // {1} = Только название модели, без версии
+    {
+      "type": "host",
+      "format": "{2}"
     },
     "shell",
     "packages",
     "terminal",
-    //"wm", // В Windows покажет DWM
-    //"datetime",
     "uptime",
-    // // === HARDWARE ===
-    // "break",
-    // {
-    //     "type": "custom", 
-    //     "format": "----------- HARDWARE -----------",
-    //     "key": " ",
-    //     "keyColor": "#f78b04",
-    //     "outputColor":"#f78b04" // Цвет текста (Оранжевый)
-    // },
-    //"chassis",
-    //"board",
-    //"bios",
     "cpu",
     "cpuusage",
     "gpu",
     "memory",
-    //"swap",
     "disk",
     "battery",
-    // // === NETWORK ===
-    // "break",
-    // {
-    //     "type": "custom", 
-    //     "format": "----------- NETWORK ------------",
-    //     "key": " ",
-    //     "keyColor": "#f78b04",
-    //     "outputColor":"#f78b04" // Цвет текста (Оранжевый)
-    // },
     "localip",
     "dns",
-    //"locale",
-     //"opengl",
-     //"users",
-     //"version",
     "break",
     "colors",
     "break"
