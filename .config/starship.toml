@@ -14,23 +14,23 @@ $character"""
 add_newline = true
 
 [directory]
-style = "bold #48A0C7"
+style = "#48A0C7"
 truncation_length = 5
 truncate_to_repo = false
 read_only = " 🔒"
 
 [character]
-success_symbol = "[❯](bold #48A0C7)"
-error_symbol = "[❯](bold #FF7B72)"
-vimcmd_symbol = "[❮](bold #7EE787)"
+success_symbol = "[❯](#48A0C7)"
+error_symbol = "[❯](#FF7B72)"
+vimcmd_symbol = "[❮](#7EE787)"
 
 [git_branch]
 format = "on [git:$branch]($style) "
-style = "bold bright-black"
+style = "bright-black"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
-style = "bold #FFA657"
+style = "#FFA657"
 conflicted = "="
 ahead = "⇡"
 behind = "⇣"
@@ -47,4 +47,4 @@ style = "bright-black"
 
 [cmd_duration]
 min_time = 2_000
-format = " [took $duration](bold yellow)"
+format = " [took $duration](yellow)"
