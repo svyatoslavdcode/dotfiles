@@ -49,7 +49,6 @@
     "localip",
     "dns",
     "break",
-    "colors",
-    "break"
+    "colors"
   ]
 }
