@@ -17,6 +17,13 @@ if (-not (Test-Path $fastfetchTarget)) {
 Copy-Item "$scriptDir\.config\fastfetch\*" $fastfetchTarget -Force
 Write-Host "  [+] Fastfetch configs installed -> $fastfetchTarget" -ForegroundColor Green
 
+# 1.1 Starship prompt config
+$starshipSource = "$scriptDir\.config\starship.toml"
+if (Test-Path $starshipSource) {
+    Copy-Item $starshipSource "$HOME\.config\starship.toml" -Force
+    Write-Host "  [+] Starship config installed -> $HOME\.config\starship.toml" -ForegroundColor Green
+}
+
 # 2. PowerShell Profile
 $myDocs = [Environment]::GetFolderPath('MyDocuments')
 $profileDirs = @("$myDocs\PowerShell", "$HOME\Documents\PowerShell")
@@ -58,6 +65,12 @@ if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
     Write-Host "  [+] Fastfetch is installed." -ForegroundColor Green
 } else {
     Write-Host "  [!] Fastfetch not found. Run: winget install Fastfetch-cli.Fastfetch" -ForegroundColor Yellow
+}
+
+if (Get-Command starship -ErrorAction SilentlyContinue) {
+    Write-Host "  [+] Starship is installed." -ForegroundColor Green
+} else {
+    Write-Host "  [!] Starship not found. Run: winget install Starship.Starship" -ForegroundColor Yellow
 }
 
 if (Get-Command pwsh -ErrorAction SilentlyContinue) {

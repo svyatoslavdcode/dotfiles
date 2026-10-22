@@ -1,4 +1,4 @@
-# Minimal profile: UTF‑8 + Oh My Posh (if installed) + Fastfetch with explicit config path
+# Minimal profile: UTF‑8 + Fastfetch + Starship Pure prompt
 try {
     [Console]::InputEncoding  = [System.Text.Encoding]::UTF8
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
@@ -13,4 +13,8 @@ if (-not [Console]::IsOutputRedirected) {
     if (Get-Command fastfetch -ErrorAction SilentlyContinue) {
         fastfetch -c "$HOME/.config/fastfetch/config.jsonc"
     }
+}
+
+if (Get-Command starship -ErrorAction SilentlyContinue) {
+    Invoke-Expression (&starship init powershell)
 }

@@ -1,0 +1,50 @@
+# Pure-style minimalist two-line prompt for Starship
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Blank line before prompt for clean separation
+add_newline = true
+
+[directory]
+style = "bold #48A0C7"
+truncation_length = 5
+truncate_to_repo = false
+read_only = " 🔒"
+
+[character]
+success_symbol = "[❯](bold #48A0C7)"
+error_symbol = "[❯](bold #FF7B72)"
+vimcmd_symbol = "[❮](bold #7EE787)"
+
+[git_branch]
+format = "on [git:$branch]($style) "
+style = "bold bright-black"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = "bold #FFA657"
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[git_state]
+format = ' \([$state( $progress_current/$progress_total)]($style)\)'
+style = "bright-black"
+
+[cmd_duration]
+min_time = 2_000
+format = " [took $duration](bold yellow)"

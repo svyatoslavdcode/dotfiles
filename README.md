@@ -15,8 +15,10 @@ Personal configuration for **Windows Terminal**, **PowerShell 7**, and **Command
 * **Default window size:** `35` rows
 
 ### PowerShell 7
-* Automated **Fastfetch** banner with an orange (*#f78b04*) ASCII *Blade Runner 2049* logo
-* Clean system telemetry (OS, Kernel, Host, Shell, Terminal, Uptime, CPU, GPU, RAM, Disks, Battery, IP/DNS)
+* Automated **Fastfetch** system telemetry (OS, Kernel, Host, Shell, Terminal, Uptime, CPU, GPU, RAM, Disks, Battery, IP/DNS)
+* **Starship** Pure-style two-line minimalist prompt:
+  * Top line: working directory, git branch (`git:main`), git status (`[!+]`), and execution duration (`took 2.4s`)
+  * Bottom line: clean `❯` prompt character (`cyan` on success, `red` on error)
 * UTF-8 output encoding by default
 * Seamless prompt spacing
 
@@ -31,10 +33,11 @@ Personal configuration for **Windows Terminal**, **PowerShell 7**, and **Command
 ```text
 dotfiles/
 ├── .config/
-│   └── fastfetch/
-│       ├── ascii.txt      # Blade Runner 2049 ASCII art logo
-│       ├── config.jsonc   # Full Fastfetch config for PowerShell
-│       └── cmd.jsonc      # Minimal Fastfetch config for CMD
+│   ├── fastfetch/
+│   │   ├── ascii.txt      # Blade Runner 2049 ASCII art logo
+│   │   ├── config.jsonc   # Full Fastfetch config for PowerShell
+│   │   └── cmd.jsonc      # Minimal Fastfetch config for CMD
+│   └── starship.toml      # Pure-style two-line prompt configuration
 ├── powershell/
 │   └── Microsoft.PowerShell_profile.ps1
 ├── terminal/
@@ -53,6 +56,7 @@ dotfiles/
 ### 1. Prerequisites (install via WinGet)
 ```powershell
 winget install Fastfetch-cli.Fastfetch
+winget install Starship.Starship
 winget install Microsoft.PowerShell
 winget install chrisant996.clink
 ```
