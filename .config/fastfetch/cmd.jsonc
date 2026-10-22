@@ -6,16 +6,16 @@
   "display": {
     "separator": ": ",
     "color": {
-      "keys": "#f78b04"
+      "keys": "#48A0C7"
     }
   },
   "modules": [
     {
       "type": "title",
       "color": {
-        "user": "#f78b04",
+        "user": "#48A0C7",
         "at": "default",
-        "host": "#f78b04"
+        "host": "#48A0C7"
       }
     },
     "separator",

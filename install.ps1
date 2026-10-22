@@ -40,8 +40,8 @@ $clinkTarget = "$env:LOCALAPPDATA\clink"
 if (-not (Test-Path $clinkTarget)) {
     New-Item -ItemType Directory -Path $clinkTarget -Force | Out-Null
 }
-Copy-Item "$scriptDir\clink\prompt_space.lua" $clinkTarget -Force
-Write-Host "  [+] Clink lua script installed -> $clinkTarget" -ForegroundColor Green
+Copy-Item "$scriptDir\clink\*" $clinkTarget -Force
+Write-Host "  [+] Clink lua scripts installed -> $clinkTarget" -ForegroundColor Green
 
 # 4. Windows Terminal & Preview Settings
 $packagesDir = "$env:LOCALAPPDATA\Packages"

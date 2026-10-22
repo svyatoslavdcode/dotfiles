@@ -5,7 +5,7 @@
   //   "type": "file",
   //   "source": "~/.config/fastfetch/ascii.txt",
   //   "position": "top",
-  //   "color": { "1": "#f78b04" }, 
+  //   "color": { "1": "#48A0C7" }, 
   //   "padding": {
   //     "top": 0,
   //     "right": 3
@@ -17,16 +17,16 @@
   "display": {
     "separator": ": ",
     "color": {
-      "keys": "#f78b04"
+      "keys": "#48A0C7"
     }
   },
   "modules": [
     {
       "type": "title",
       "color": {
-        "user": "#f78b04",
+        "user": "#48A0C7",
         "at": "default",
-        "host": "#f78b04"
+        "host": "#48A0C7"
       }
     },
     "separator",
